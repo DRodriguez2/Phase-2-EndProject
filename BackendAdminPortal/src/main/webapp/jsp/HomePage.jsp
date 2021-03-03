@@ -13,7 +13,7 @@
 			<a href="Subjects.jsp">Configure Subject Master List</a>
 		</p>
 		<p>
-			<a href="">Configure Teacher Master List</a>
+			<a href="Teachers.jsp">Configure Teacher Master List</a>
 		</p>
 		<p>
 			<a href="">Configure Class Master List</a>

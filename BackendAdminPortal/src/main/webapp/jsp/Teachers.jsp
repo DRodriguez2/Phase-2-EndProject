@@ -9,12 +9,14 @@
 <title>BackendAdminPortal</title>
 </head>
 <body>
-	<h2>Configure Subject Master List</h2>
-	<form action="/AdminPortal/Subjects" method="post">
+	<h2>Configure Teacher Master List</h2>
+	<form action="/AdminPortal/Teachers" method="post">
 		<fieldset class="fieldset-auto-width">
-			<legend>Add Subject to Subject Master List</legend>
+			<legend>Add Teacher to Subject Master List</legend>
 			<p>
-				Enter Subject: <input type="text" name="addSubject"><br>
+				Enter Teacher ID: <input type="text" name="addTeacherID"><br>
+				Enter First Name: <input type="text" name="addFirstName"><br>
+				Enter Last Name: <input type="text" name="addLastName"><br>
 				<input type="hidden" name="formAction" value="1" /> <input
 					type="submit">
 			</p>
@@ -22,11 +24,11 @@
 	</form>
 	<br>
 	<br>
-	<form action="/AdminPortal/Subjects" method="post">
+	<form action="/AdminPortal/Teachers" method="post">
 		<fieldset class="fieldset-auto-width">
-			<legend>Delete Subject From Subject Master List</legend>
+			<legend>Delete Teacher From Subject Master List</legend>
 			<p>
-				Enter Subject: <input type="text" name="deleteSubject"><br>
+				Enter Teacher ID: <input type="text" name="deleteTeacher"><br>
 				<input type="hidden" name="formAction" value="2" /> <input
 					type="submit">
 			</p>
@@ -34,9 +36,9 @@
 	</form>
 	<br>
 	<br>
-	<form action="/AdminPortal/Subjects" method="get">
+	<form action="/AdminPortal/Teachers" method="get">
 		<fieldset class="fieldset-auto-width">
-			<legend>View Subject Master List</legend>
+			<legend>View Teacher Master List</legend>
 			<p>
 				<input type="hidden" name="formAction" value="0" /> <input
 					type="submit" value="View">
@@ -57,14 +59,18 @@
 	<c:if test="${result != null}">
 			${result}
 	</c:if>
-	<c:if test="${subjects != null}">
+	<c:if test="${teachers != null}">
 		<table>
 			<tr>
-				<th>Subject</th>
+				<th>Teacher ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
 			</tr>
-			<c:forEach var="subject" items="${subjects}">
+			<c:forEach var="teacher" items="${teachers}">
 				<tr>
-					<td><c:out value="${subject.getSubject()}" /></td>
+					<td><c:out value="${teacher.getTeacherID()}" /></td>
+					<td><c:out value="${teacher.getFirstName()}" /></td>
+					<td><c:out value="${teacher.getLastName()}" /></td>
 				</tr>
 			</c:forEach>
 		</table>

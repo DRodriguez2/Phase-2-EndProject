@@ -21,6 +21,7 @@
     <property name="current_session_context_class">thread</property>
 
     <mapping class="hibernateClasses.SubjectEntity" />
+    <mapping class="hibernateClasses.TeacherEntity" />
 
 </session-factory>
 </hibernate-configuration>
